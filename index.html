@@ -11,20 +11,20 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg-dark: #0a0f1c;
-      --bg-card: #111827;
-      --bg-card-hover: #1a2332;
-      --blue-primary: #3b82f6;
-      --blue-glow: rgba(59,130,246,0.15);
-      --blue-deep: #1e40af;
+      --bg-dark: #060a14;
+      --bg-card: #0c1222;
+      --bg-card-hover: #131b2e;
+      --blue-primary: #2563eb;
+      --blue-glow: rgba(37,99,235,0.12);
+      --blue-deep: #1d4ed8;
       --cta: #f97316;
       --cta-hover: #ea580c;
       --cta-glow: rgba(249,115,22,0.25);
-      --green: #22c55e;
-      --green-soft: rgba(34,197,94,0.1);
-      --text-primary: #f1f5f9;
+      --green: #10b981;
+      --green-soft: rgba(16,185,129,0.1);
+      --text-primary: #f8fafc;
       --text-secondary: #94a3b8;
-      --text-muted: #64748b;
+      --text-muted: #475569;
       --text-dark: #0f172a;
       --border: rgba(255,255,255,0.06);
       --white: #ffffff;
@@ -497,20 +497,18 @@
         <div class="logo-icon">
           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#3b82f6"/>
-                <stop offset="100%" stop-color="#6366f1"/>
+              <linearGradient id="shieldGrad" x1="5" y1="3" x2="35" y2="38" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="50%" stop-color="#3b82f6"/>
+                <stop offset="100%" stop-color="#1d4ed8"/>
               </linearGradient>
-              <linearGradient id="checkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#22c55e"/>
-                <stop offset="100%" stop-color="#4ade80"/>
+              <linearGradient id="checkGrad" x1="14" y1="17" x2="27" y2="25" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10b981"/>
+                <stop offset="100%" stop-color="#34d399"/>
               </linearGradient>
             </defs>
-            <!-- Shield shape -->
             <path d="M20 3L5 9v9c0 9.4 6.4 18.2 15 20.5C28.6 36.2 35 27.4 35 18V9L20 3z" fill="url(#shieldGrad)"/>
-            <!-- Inner glow -->
-            <path d="M20 6L8 11v7c0 7.8 5.1 15.1 12 17 6.9-1.9 12-9.2 12-17v-7L20 6z" fill="rgba(255,255,255,0.1)"/>
-            <!-- Checkmark -->
+            <path d="M20 6L8 11v7c0 7.8 5.1 15.1 12 17 6.9-1.9 12-9.2 12-17v-7L20 6z" fill="rgba(255,255,255,0.07)"/>
             <path d="M14 20.5l4.5 4.5 8-9" stroke="url(#checkGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </svg>
         </div>
