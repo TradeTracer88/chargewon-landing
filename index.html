@@ -296,27 +296,6 @@
     .yes { color: var(--green); font-weight: 700; }
     .no { color: var(--red); opacity: 0.8; }
 
-    /* ---- TESTIMONIALS ---- */
-    .proof { border-top: 1px solid var(--border); }
-    .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .proof-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .proof-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
-    .proof-stars { color: var(--gold); font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
-    .proof-text { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; line-height: 1.7; }
-    .proof-text strong { color: var(--green); }
-    .proof-author { display: flex; align-items: center; gap: 12px; }
-    .proof-avatar {
-      width: 38px; height: 38px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue-primary), var(--blue-deep));
-      color: var(--white); display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 14px;
-    }
-    .proof-name { font-weight: 600; font-size: 14px; color: var(--white); }
-    .proof-role { font-size: 12px; color: var(--text-muted); }
     .proof-detail { font-size: 11px; color: var(--blue-light); margin-top: 2px; }
 
     /* ---- FAQ ---- */
@@ -511,15 +490,15 @@
       <!-- Stats -->
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="num" id="winRate"><span class="green">--</span></div>
-          <div class="label">Avg Win Rate</div>
+          <div class="num"><span class="green">15%</span></div>
+          <div class="label">Success Fee</div>
         </div>
         <div class="hero-stat">
-          <div class="num" id="recovered">$--</div>
-          <div class="label">Recovered This Month</div>
+          <div class="num">$<span class="green">0</span></div>
+          <div class="label">Upfront Cost</div>
         </div>
         <div class="hero-stat">
-          <div class="num" id="responseTime">--</div>
+          <div class="num"><span class="green">&lt;60</span>s</div>
           <div class="label">Avg Response Time</div>
         </div>
       </div>
@@ -733,54 +712,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="section proof">
-    <div class="section-inner">
-      <div class="section-header fade-in">
-        <div class="section-tag">Merchants Love Us</div>
-        <h2>Real Results. Real Recovery.</h2>
-        <p>Shopify stores that stopped losing money to chargebacks.</p>
-      </div>
-      <div class="proof-grid">
-        <div class="proof-card fade-in">
-          <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="proof-text">"We were losing <strong>$2,000+/month</strong> to chargebacks on our dropshipping store. ChargeWon recovered <strong>$1,400 in the first month</strong> alone. Setup took literally one minute."</p>
-          <div class="proof-author">
-            <div class="proof-avatar">M</div>
-            <div>
-              <div class="proof-name">Marcus T.</div>
-              <div class="proof-role">Shopify Dropshipping Store</div>
-              <div class="proof-detail">~$85K/mo revenue &middot; 12 disputes recovered</div>
-            </div>
-          </div>
-        </div>
-        <div class="proof-card fade-in">
-          <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="proof-text">"Tried Chargeflow but their 25% uncapped fee was killing us on high-value orders. ChargeWon's $250 cap saved us <strong>$800 on a single dispute</strong>. Same results, way better economics."</p>
-          <div class="proof-author">
-            <div class="proof-avatar">S</div>
-            <div>
-              <div class="proof-name">Sarah K.</div>
-              <div class="proof-role">Fashion E-Commerce Brand</div>
-              <div class="proof-detail">Switched from Chargeflow &middot; 7 wins in 2 months</div>
-            </div>
-          </div>
-        </div>
-        <div class="proof-card fade-in">
-          <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="proof-text">"The AI evidence is shockingly thorough. It pulled shipping confirmations, matched customer history to prior orders, and wrote a rebuttal I never could have. <strong>Won 4 out of 5 disputes.</strong>"</p>
-          <div class="proof-author">
-            <div class="proof-avatar">J</div>
-            <div>
-              <div class="proof-name">James R.</div>
-              <div class="proof-role">Print-on-Demand Store Owner</div>
-              <div class="proof-detail">80% win rate &middot; $3,200 recovered</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ -->
   <section class="section faq-section" id="faq">
@@ -879,30 +810,6 @@
       }
     }
 
-    // Counter animation
-    function animateNum(el, target, prefix, suffix, decimals) {
-      prefix = prefix || ''; suffix = suffix || ''; decimals = decimals || 0;
-      let cur = 0;
-      const step = target / 50;
-      const iv = setInterval(() => {
-        cur += step;
-        if (cur >= target) { cur = target; clearInterval(iv); }
-        const display = decimals > 0 ? cur.toFixed(decimals) : Math.round(cur).toLocaleString();
-        el.innerHTML = prefix + display + suffix;
-      }, 22);
-    }
-
-    // Animate stats on scroll
-    let statsAnimated = false;
-    const statsObs = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !statsAnimated) {
-        statsAnimated = true;
-        animateNum(document.getElementById('winRate'), 67, '<span class="green">', '%</span>');
-        animateNum(document.getElementById('recovered'), 12400, '$', '');
-        document.getElementById('responseTime').innerHTML = '<span class="green">&lt;60</span>s';
-      }
-    });
-    statsObs.observe(document.querySelector('.hero-stats'));
 
     // Fade-in on scroll
     const fadeObs = new IntersectionObserver((entries) => {
